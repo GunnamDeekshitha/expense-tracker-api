@@ -1,12 +1,8 @@
-# app/routes/users.py
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from fastapi.security import OAuth2PasswordRequestForm
-
 from .. import crud, schemas, auth, database
-
 router = APIRouter(prefix="/users", tags=["Users"])
-
 
 @router.post("/register", response_model=schemas.UserResponse)
 def register(user_in: schemas.UserCreate, db: Session = Depends(database.get_db)):
@@ -15,7 +11,6 @@ def register(user_in: schemas.UserCreate, db: Session = Depends(database.get_db)
         raise HTTPException(status_code=400, detail="Username already registered")
     user = crud.create_user(db, user_in)
     return user
-
 
 @router.post("/login", response_model=schemas.Token)
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(database.get_db)):

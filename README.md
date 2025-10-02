@@ -26,7 +26,7 @@ Setup / Run Locally
 2. Install dependencies:
    pip install -r requirements.txt
 3. Configure MySQL database
-   *  Replace "use_your_password" in app/database.py with your MySQL password.
+   *  Replace "replace_your_password" in app/database.py with your MySQL password.
 4. Run the FastAPI server:
    uvicorn app.main:app --reload
 5. Access API documentation in your browser:

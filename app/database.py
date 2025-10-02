@@ -8,7 +8,7 @@ DB_NAME = "expense_db"
 DB_HOST = "localhost"
 DB_PORT = 3306
 
-SQLALCHEMY_DATABASE_URL = f"mysql+mysqlconnector://root:use_your_password@localhost:3306/expense_tracker"
+SQLALCHEMY_DATABASE_URL = f"mysql+mysqlconnector://root:replace-your-password@localhost:3306/expense_tracker"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
